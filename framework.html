@@ -13,30 +13,31 @@
                 function isPresent() {
                        alert("You have made it inside the isPresent() function!!");
                 }
+				
+                function writeToFile() {
+                    file = fopen("GitHub\AttendApp\framework.txt");
+					file_length = flength(file);
+					content = fread(file, file_length);
+					document.getElementById("myDiv").innerText = content;
 
-				function WriteToFile(passForm) {
+                    //var fh = fopen("D:\GitHub\AttendApp\framework.txt");
 
-					Set fso = CreateObject("Scripting.FileSystemObject"); 
-					Set s = fso.CreateTextFile("D:\GitHub\AttendApp.txt", True);
- 
-					var firstName = document.getElementById('first');
-					var lastName  = document.getElementById('second');
- 
-					s.writeline("First Name :" + FirstName);
-					s.writeline("Last Name :" + lastName);
- 
-					s.writeline("-----------------------------");
-					s.Close();
+                     
+					//fwrite(fh, message); // Write the string to a file
+					//fclose(fh); // close
+                    alert("You made it to the write file method!!");
 				}
 				
+       
 			</script>
 		</head>
-		<body>	
+		<body>
 			Enter the First name : <input id="first">
 			Enter the last name : <input id="second">
 			<button onclick="returnName()">Return name</button>
 			<input id="answer">
 			<button onclick="isPresent()">Present</button>
-			<button onclick="WriteTofile()">To File</button>
+			<button onclick="writeTofile()">To File</button>
+			<div id="myDiv"></div>
 		</body>
 </html>
